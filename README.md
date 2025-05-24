@@ -35,6 +35,9 @@
 
 # 📄 Google Docs RAG System with Pinecone & LangChain
 
+[![Watch the demo](https://i.ytimg.com/vi/Vgz3LRyb7_E/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCmvuWk7HPX2XdE7ExSKIkRFs9PrQ)](https://youtu.be/Vgz3LRyb7_E?si=PHVVzjHupBN1-u8p)
+
+
 ## 📌 Project Overview
 
 This project implements a sophisticated **Retrieval-Augmented Generation (RAG)** system that extracts knowledge from Google Docs, processes it with AI, and enables intelligent question-answering capabilities. The system:
