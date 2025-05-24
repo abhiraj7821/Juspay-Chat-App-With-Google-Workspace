@@ -35,67 +35,104 @@
 
 ###
 
+# 📄 Google Docs RAG System with Pinecone & LangChain
 
-<h4 align="left">📌 Project Overview</h4>
+## 📌 Project Overview
 
-###
+This project implements a sophisticated **Retrieval-Augmented Generation (RAG)** system that extracts knowledge from Google Docs, processes it with AI, and enables intelligent question-answering capabilities. The system:
 
-<p align="left">This project implements a sophisticated Retrieval-Augmented Generation (RAG) system that extracts knowledge from Google Docs, processes it with AI, and enables intelligent question-answering capabilities. The system:<br><br>Authenticates users via Google OAuth<br><br>Extracts and indexes document content from Google Workspace<br><br>Creates semantic embeddings using OpenAI's models<br><br>Stores vectors in Pinecone for efficient retrieval<br><br>Answers questions using LangChain's RAG pipeline<br><br>Built with a modern tech stack, this application showcases how to build production-ready AI systems that leverage both proprietary document stores and cutting-edge LLMs.</p>
+- Authenticates users via **Google OAuth**
+- Extracts and indexes document content from **Google Workspace**
+- Creates semantic embeddings using **OpenAI**
+- Stores vectors in **Pinecone** for efficient retrieval
+- Answers questions using **LangChain's RAG pipeline**
 
-###
+Built with a modern tech stack, this application showcases how to build production-ready AI systems that combine proprietary document stores with cutting-edge LLMs.
 
-<h4 align="left">🚀 Key Features</h4>
+---
 
-###
+## 🚀 Key Features
 
-<p align="left">Secure Google OAuth 2.0 integration with proper session management<br><br>Document processing pipeline that handles Google Docs formatting<br><br>Chunking and embedding generation optimized for RAG<br><br>Pinecone vector database integration for low-latency semantic search<br><br>LangChain orchestration for retrieval and generation<br><br>Responsive frontend with chat interface<br><br>Source attribution showing document origins for answers</p>
+- 🔐 Secure **Google OAuth 2.0** integration with session management  
+- 📄 Document processing pipeline that handles Google Docs formatting  
+- ✂️ Intelligent chunking and optimized embedding generation  
+- 📦 Integration with **Pinecone** for low-latency vector search  
+- 🧠 Retrieval and generation orchestration using **LangChain**  
+- 💬 Responsive **chat interface** on the frontend  
+- 📚 Source attribution for answer transparency  
 
-###
+---
 
-<h4 align="left">🛠 Tech Stack</h4>
+## 🛠 Tech Stack
 
-###
+### Backend
+- **Node.js (v18+)** – JavaScript runtime
+- **Express** – Web framework
+- **Passport.js** – Authentication middleware
+- **Google APIs** – Docs and Drive access
+- **LangChain** – RAG orchestration
+- **OpenAI (text-embedding-3-large)** – Embeddings
+- **Pinecone** – Vector database
+- **Express Session** – Secure session management
+- **CORS** – Cross-origin resource handling
 
-<p align="left">Backend<br>Node.js (v18+) - JavaScript runtime<br><br>Express - Web application framework<br><br>Passport.js - Authentication middleware<br><br>Google APIs - Docs and Drive integration<br><br>LangChain - RAG orchestration<br><br>OpenAI Embeddings (text-embedding-3-large) - Vector generation<br><br>Pinecone - Vector database<br><br>Express Session - Secure session management<br><br>CORS - Secure cross-origin requests<br><br>Frontend<br>React (v18) - UI framework<br><br>Vite - Modern build tool<br><br>Tailwind CSS - Utility-first styling<br><br>Font Awesome - Icon toolkit<br><br>Axios (though currently using Fetch API) - HTTP client<br><br>Infrastructure<br>Docker (for Pinecone local testing)<br><br>Environment variables via dotenv</p>
+### Frontend
+- **React (v18)** – UI framework
+- **Vite** – Modern build tool
+- **Tailwind CSS** – Utility-first styling
+- **Font Awesome** – Icons
+- **Axios / Fetch API** – HTTP requests
 
-###
+### Infrastructure
+- **Docker** (for local Pinecone testing)
+- **dotenv** – Environment configuration
 
-<h4 align="left">🔧 Project Architecture</h4>
+---
 
-###
+## 🔧 Project Architecture
 
-<p align="left"></p>
+  ```
+  google-docs-rag/
+  ├── backend/
+  │   ├── controllers/
+  │   │   ├── ai.controllers.js       # Document processing logic
+  │   │   ├── rag.pipeline.js         # RAG question-answering
+  │   │   └── pinecone.client.js      # Vector DB interface
+  │   ├── routes/
+  │   │   └── auth.routes.js          # Authentication endpoints
+  │   └── server.js                   # Main application entry
+  ├── frontend/
+  │   ├── src/
+  │   │   ├── App.jsx                 # Main React component
+  │   │   └── main.jsx                # React entry point
+  ├── .env                            # Environment configuration
+  └── README.md                       # This file
+  ```
 
-###
+---
 
-<h4 align="left">🏗 System Flow</h4>
+## 🏗 System Flow
 
-###
+### 🔐 Authentication
+- User logs in via Google OAuth
+- Session established with tokens
+- Permissions granted for Docs access
 
-<p align="left">
+### 📄 Document Processing
+- User links docs via `/api/list-docs`
+- System retrieves and chunks content
+- Generates embeddings using OpenAI
+- Stores vectors in Pinecone with metadata
 
-1. **Authentication**
-   - User logs in via Google OAuth
-   - Session established with access tokens
-   - Permissions granted for Google Docs access
+### 💬 Question Answering
+- User submits a question from frontend
+- System:
+  - Embeds the question
+  - Retrieves relevant chunks from Pinecone
+  - Uses LangChain + OpenAI to generate an answer
+  - Returns response with source citations
 
-2. **Document Processing**
-   - User links Google Docs via `/api/list-docs`
-   - System retrieves and chunks document content
-   - Generates embeddings via OpenAI
-   - Stores vectors in Pinecone with metadata
-
-3. **Question Answering**
-   - User submits question via frontend
-   - System:
-     - Embeds question
-     - Retrieves relevant document chunks
-     - Generates answer with context
-     - Returns response with sources
-</p>
-
-###
-
+---
 
 ## 💻 Development Setup
 
@@ -183,3 +220,5 @@ For major changes, open an issue first to discuss your proposed changes.
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+
