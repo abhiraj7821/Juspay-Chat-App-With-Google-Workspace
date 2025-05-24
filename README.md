@@ -146,8 +146,8 @@ Built with a modern tech stack, this application showcases how to build producti
 ### Installation
 1. Clone repository:
    ```bash
-   git clone https://github.com/yourusername/google-docs-rag.git
-   cd google-docs-rag
+   [git clone https://github.com/yourusername/google-docs-rag.git](https://github.com/abhiraj7821/Juspay-Chat-App-With-Google-Workspace.git)
+   cd Juspay-Chat-App-With-Google-Workspace
    ```
 2. Install dependencies:
    ```bash
