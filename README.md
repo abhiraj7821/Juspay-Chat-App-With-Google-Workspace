@@ -1,5 +1,3 @@
-<h2 align="left">Hi 👋! This is a Google Docs RAG System with Pinecone & LangChain</h2>
-
 ###
 
 <div align="left">
